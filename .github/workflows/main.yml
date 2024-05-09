@@ -10,7 +10,7 @@ on:
   schedule:
     - cron: "*/10 * * * 4"
   workflow_dispatch:
-# Testing our first workflow
+# Testing my first workflow
 
 jobs:
   job1: 
@@ -23,7 +23,7 @@ jobs:
           hostname
       - name: my step2
         run: |
-          echo "hello from gagan"
+          echo "hello from zack"
           sleep 10
       - run: |
           echo "hello from step3"
@@ -45,5 +45,5 @@ jobs:
            hostname
       - name: my step2
         run: |
-          echo "hello from gagan"  
+          echo "hello from zack"  
           sleep 10
