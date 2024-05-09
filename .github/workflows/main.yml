@@ -7,5 +7,4 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      run: 
-        echo "hello from step1, job1 of workflow1"
+      run echo "hello from step1, job1 of workflow1"
