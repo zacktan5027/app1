@@ -7,8 +7,6 @@ on:
   pull_request:
     branches:
      - main
-  schedule:
-    - cron: "*/10 * * * 4"
   workflow_dispatch:
 # Testing my first workflow
 
@@ -23,7 +21,7 @@ jobs:
           hostname
       - name: my step2
         run: |
-          echo "hello from zack"
+          echo "hello from ack"
           sleep 10
       - run: |
           echo "hello from step3"
@@ -36,7 +34,7 @@ jobs:
           uname -a
           echo "final step4 execution done"
   job2: 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu
     steps:
       - name: step1
         run: |
@@ -45,5 +43,5 @@ jobs:
            hostname
       - name: my step2
         run: |
-          echo "hello from zack"  
+          echo "hello from gagan"  
           sleep 10
