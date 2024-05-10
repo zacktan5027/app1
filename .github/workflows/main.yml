@@ -21,7 +21,7 @@ jobs:
       - name: step1
         env:
           greetings: GoodMorning
-          name: Sandeep
+          name: Zack
         run: |
           echo "$greetings from $name $lastname, job1 of workflow1 running in environment $environment"
           sleep 10
