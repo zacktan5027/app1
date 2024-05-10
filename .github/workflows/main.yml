@@ -24,7 +24,7 @@ jobs:
           name: Zack
         run: |
           echo "$greetings from $name $lastname, job1 of workflow1 running in environment ${{ vars.environment}}"
-          echo "Running on server ${{ vars.servername}} "
+          echo "Running on server ${{ vars.servername}} with API key as ${{secrets.API_KEY}}"
           sleep 10
           hostname
       - name: my step2
