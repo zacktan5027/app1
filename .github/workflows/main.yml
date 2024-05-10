@@ -9,19 +9,26 @@ on:
      - main
   workflow_dispatch:
 # Testing my first workflow
-
+env: 
+  name: Zack
 jobs:
-  job1: 
+  build: 
     runs-on: ubuntu-latest
+    env:
+      environment: dev
+      lastname: Tan
     steps:
       - name: step1
+        env:
+          greetings: GoodMorning
+          name: Sandeep
         run: |
-          echo "hello from step1, job1 of workflow1"
-          sleep 30
+          echo "$greetings from $name $lastname, job1 of workflow1 running in environment $environment"
+          sleep 10
           hostname
       - name: my step2
         run: |
-          echo "hello from ack"
+          echo "$greetings from $name"
           sleep 10
       - run: |
           echo "hello from step3"
@@ -33,15 +40,17 @@ jobs:
           sudo cat /etc/os-release
           uname -a
           echo "final step4 execution done"
-  job2: 
-    runs-on: zack
+  test: 
+    runs-on: Zack
+    env:
+      environment: staging
     steps:
       - name: step1
         run: |
-           echo "hello from step1, job 2 of workflow1"
+           echo "$greetings from $name $lastname, job1 of workflow1 running in environment $environment"
            sleep 30
            hostname
       - name: my step2
         run: |
-          echo "hello from gagan"  
+          echo "hello from $name"  
           sleep 10
