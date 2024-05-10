@@ -8,14 +8,14 @@ on:
     branches:
      - main
   workflow_dispatch:
-# Testing my first workflow
+# Testing our first workflow
 env: 
   name: Zack
 jobs:
   build: 
     runs-on: ubuntu-latest
+    environment: dev
     env:
-      environment: dev
       lastname: Tan
     steps:
       - name: step1
@@ -23,7 +23,8 @@ jobs:
           greetings: GoodMorning
           name: Zack
         run: |
-          echo "$greetings from $name $lastname, job1 of workflow1 running in environment $environment"
+          echo "$greetings from $name $lastname, job1 of workflow1 running in environment ${{ vars.environment}}"
+          echo "Running on server ${{ vars.servername}} "
           sleep 10
           hostname
       - name: my step2
@@ -41,13 +42,13 @@ jobs:
           uname -a
           echo "final step4 execution done"
   test: 
-    runs-on: Zack
-    env:
-      environment: staging
+    runs-on: zack
+    environment: test
     steps:
       - name: step1
         run: |
-           echo "$greetings from $name $lastname, job1 of workflow1 running in environment $environment"
+           echo "$greetings from $name $lastname, job1 of workflow1 running in environment ${{ vars.environment }}"
+           echo "Running on server ${{ vars.servername}} "
            sleep 30
            hostname
       - name: my step2
